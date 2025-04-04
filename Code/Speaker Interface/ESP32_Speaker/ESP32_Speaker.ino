@@ -62,8 +62,8 @@ int getNoteFrequency(const char* noteName) {
 void playHappyBirthday() {
   // Happy Birthday melody using note names
   const char* melody[] = {
-    "C4", "C4", "D4", "C4", "F4", "E4", 
-    "C4", "C4", "D4", "C4", "G4", "F4", 
+    "C4", "NONE", "C4", "NONE", "D4", "NONE", "D4", "F4", "E4", 
+    "NONE", "C4", "D4", "C4", "G4", "F4", 
     "C4", "C4", "C4", "A4", "F4", "E4", 
     "D4", "B4", "B4", "A4", "F4", "E4", "C4"
   };
