@@ -14,7 +14,7 @@ This repository is dedicated to showcasing different applications and functional
 - Real-time Data Processing
 
 ## Documentation
-![Project Overview](documentation/project_overview.png)
+![Project Overview](Documentation/wireless_Adafruit_HUZZAH32_ESP32_Feather_Pinout.png)
 
 
 ## Getting Started
