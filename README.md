@@ -14,7 +14,8 @@ This repository is dedicated to showcasing different applications and functional
 - Real-time Data Processing
 
 ## Documentation
-![Project Overview](Documentation/wireless_Adafruit_HUZZAH32_ESP32_Feather_Pinout.png)
+Huzzah32 ESP32 Feather Pinout
+![Project Overview](Documentation/Images/wireless_Adafruit_HUZZAH32_ESP32_Feather_Pinout.png)
 
 
 ## Getting Started
