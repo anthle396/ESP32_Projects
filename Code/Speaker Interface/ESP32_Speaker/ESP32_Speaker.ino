@@ -42,14 +42,14 @@ enum Note {
   F8_ = 5588,   F8S_ = 5920,   G8_ = 6272,   G8S_ = 6645,   A8_ = 7040,
   A8S_ = 7458,   B8_ = 7902,
 
-  NONE = 0
+  REST = 0
 };
 
 
 const int speakerPin = 21;
 
 void playNote(Note note, int duration) {
-  if (note != NONE) {
+  if (note != REST) {
     tone(speakerPin, note, duration);
   }
   delay(duration + 50);
@@ -175,8 +175,56 @@ Note parseNote(String input) {
   if (input == "B7") return B7_;
   if (input == "B8") return B8_;
 
-  return NONE;
+  return REST;
 }
+
+// SONG
+Note melody[] = {
+  // Intro: 
+  G3S_, A3_, G3S_, A3_, G3S_, A3_, 
+  C4_, B3_, A3_, REST,
+  G3S_, A3_, G3S_, A3_, G3S_, A3_, 
+  C4_, B3_, A3_, REST,
+  G3S_, A3_, G3S_, A3_, G3S_, A3_, 
+  C4_, B3_, A3_, REST,
+  G3S_, A3_, G3S_, A3_, A3_, REST,
+
+  // Chorus: "I love you baby..."
+  G4S_, G4S_, G4S_, G4S_, REST,
+  C4S_, D4S_, E4_, F4S_, G4S_, G4S_, F4S_,
+  E4_, D4S_, E4_,
+
+  F4S_, F4S_, E4_, D4S_, E4_, F4S_, E4_
+
+  // "I love you baby..."
+ 
+};
+
+int noteDurations[] = {
+  // Intro durations
+  4, 4, 4, 4, 4, 4, 4, 4,
+  4, 4, 4, 4, 4, 4, 4, 4,
+  4, 4, 4, 4, 4, 4, 4, 4,
+  4, 4, 4, 4, 4, 4, 4, 4,
+  4, 4, 4, 4, 4, 4, 4, 4,
+  4, 4, 4, 4, 4, 4, 4, 4
+};
+
+void PlayThis() {
+  int length = sizeof(melody) / sizeof(melody[0]);
+  for (int i = 0; i < length; i++) {
+    int duration = 1000 / noteDurations[i];
+    if (melody[i] == REST) {
+      delay(duration);  // Rest: just wait
+    } else {
+      tone(speakerPin, melody[i], duration);
+      delay(duration * 1.3);  // Add a bit of spacing between notes
+      noTone(speakerPin);    // Stop the tone before the next
+    }
+  }
+}
+
+//
 
 void setup() {
   pinMode(speakerPin, OUTPUT);
@@ -185,13 +233,14 @@ void setup() {
 }
 
 void loop() {
+  PlayThis();
   static String inputBuffer = "";
   while (Serial.available()) {
     char c = Serial.read();
     if (c == '\n' || c == '\r') {
       if (inputBuffer.length() > 0) {
         Note n = parseNote(inputBuffer);
-        if (n != NONE) {
+        if (n != REST) {
           playNote(n, 500);
           Serial.print("Playing note: ");
           Serial.println(inputBuffer);
@@ -206,3 +255,4 @@ void loop() {
     }
   }
 }
+
