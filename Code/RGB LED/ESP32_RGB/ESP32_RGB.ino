@@ -6,9 +6,9 @@
   and basic RGB control. The program uses PWM to control the intensity of the LED colors.
 
   Hardware Setup:
-  - Red LED connected to GPIO 13
-  - Green LED connected to GPIO 12
-  - Blue LED connected to GPIO 27
+  - Red LED connected to GPIO 13 D13
+  - Green LED connected to GPIO 12 D12
+  - Blue LED connected to GPIO 27 D27
 
   Functions:
   - toUpperCase(String &str): Converts a string to uppercase.
