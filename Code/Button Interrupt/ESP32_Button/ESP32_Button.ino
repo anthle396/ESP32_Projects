@@ -15,7 +15,7 @@
   Date: 04/03/2025
 */
 
-#define BUTTON_PIN 21  // Button connected to GPIO pin 21
+#define BUTTON_PIN 32  // Button connected to GPIO pin 21
 #define DEBOUNCE_TIME 5000  // Debounce time in milliseconds
 
 volatile bool buttonPressed = false;  // Flag to indicate button press
