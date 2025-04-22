@@ -17,6 +17,10 @@ This repository is dedicated to showcasing different applications and functional
 Huzzah32 ESP32 Feather Pinout
 ![Huzzah32_ESP32_Pinout](Documentation/Images/wireless_Adafruit_HUZZAH32_ESP32_Feather_Pinout.png)
 
+## Potentiometer Pinout
+Potentiometer Pinout
+![Potentiometer_Pinout](Documentation/Images/potentiometer-pinout.png)
+
 ## RGB LEDs and Basic Commands
 RGB LED Pinout
 ![RGB_LED_Pinout](Documentation/Images/RGB_LED_Pinout.png)
