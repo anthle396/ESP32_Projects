@@ -21,6 +21,10 @@ Huzzah32 ESP32 Feather Pinout
 Potentiometer Pinout
 ![Potentiometer_Pinout](Documentation/Images/potentiometer-pinout.png)
 
+## TFT OLED LCD DISPLAY
+TFT OLED LCD DISPLAY
+![TFT_LCD_DISPLAY](Documentation/Images/TFT_LCD_DISPLAY.jpg)
+
 ## RGB LEDs and Basic Commands
 RGB LED Pinout
 ![RGB_LED_Pinout](Documentation/Images/RGB_LED_Pinout.png)
