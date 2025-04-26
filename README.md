@@ -23,7 +23,7 @@ Potentiometer Pinout
 
 ## TFT OLED LCD DISPLAY
 TFT OLED LCD DISPLAY
-![TFT_LCD_DISPLAY](Documentation/Images/TFT_LCD_DISPLAY.jpg)
+![TFT_LCD_Display](Documentation/Images/TFT_LCD_Display.jpg)
 
 ## RGB LEDs and Basic Commands
 RGB LED Pinout
