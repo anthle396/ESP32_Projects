@@ -181,39 +181,84 @@ Note parseNote(String input) {
 // SONG
 Note melody[] = {
   // Intro: 
-  G3S_, A3_, G3S_, A3_, G3S_, A3_, 
-  C4_, B3_, A3_, REST,
-  G3S_, A3_, G3S_, A3_, G3S_, A3_, 
-  C4_, B3_, A3_, REST,
-  G3S_, A3_, G3S_, A3_, G3S_, A3_, 
-  C4_, B3_, A3_, REST,
-  G3S_, A3_, G3S_, A3_, A3_, REST,
+  C4_, C4S_, C4_, C4S_, C4_, C4S_, 
+  E4_, D4S_, C4S_, REST,
+  C4_, C4S_, C4_, C4S_, C4_, C4S_, 
+  E4_, D4S_, C4S_, REST,
+  C4_, C4S_, C4_, C4S_, E4_, REST,
 
-  // Chorus: "I love you baby..."
-  G4S_, G4S_, G4S_, G4S_, REST,
-  C4S_, D4S_, E4_, F4S_, G4S_, G4S_, F4S_,
-  E4_, D4S_, E4_,
-
-  F4S_, F4S_, E4_, D4S_, E4_, F4S_, E4_
+  // Chorus: "I love you baby"
+  G5S_, G5S_, G5S_, G5S_, C5S_, 
+  // "And if it's quite alright "
+  C5S_, D5S_, E5_, F5S_, G5S_, G5S_,
+  // "I need you, Baby"
+  F5S_, E5_, D5S_, E5_,
+  // "To warm the lonely nights"
+  F5S_, F5S_, E5_, D5S_, E5_, F5S_, F5S_, E5_,
 
   // "I love you baby..."
- 
+  E5_, E5_, G5S_, G5S_, C5S_,
+  // "Trust in me why I say"
+  C5S_, D5S_, E5_, F5S_, G5S_, G5S_,
+
+  // --- Work In Progress down here ---
+  // "Oh pretty baby" 
+  F5S_, E5_, D5S_, E5_,
+  // "Dont bring me down I pray"
+  F5S_, F5S_, E5_, D5S_, E5_, F5S_, F5S_, E5_,
+
+  // "Oh pretty baby, now that I found you, stay" 
+  E5_, E5_, G5S_, G5S_, C5S_,
+  C5S_, D5S_, E5_, F5S_, G5S_, G5S_,
+
+  // "And let me love you, baby"
+  F5S_, E5_, D5S_, E5_,
+  // "Let me love you"
+  F5S_, F5S_, E5_, D5S_, E5_, REST
 };
 
-int noteDurations[] = {
+float noteDurations[] = {
   // Intro durations
-  4, 4, 4, 4, 4, 4, 4, 4,
-  4, 4, 4, 4, 4, 4, 4, 4,
-  4, 4, 4, 4, 4, 4, 4, 4,
-  4, 4, 4, 4, 4, 4, 4, 4,
-  4, 4, 4, 4, 4, 4, 4, 4,
-  4, 4, 4, 4, 4, 4, 4, 4
+  2.5, 3, 2.5, 3, 3, 2.5, 
+  3, 2.5, 2.5, 2.5, 
+  3, 2.5, 3, 2.5, 3, 3, 2.5, 
+  3, 2.5, 2.5, 2.5, 
+  2.5, 2.5, 2.5, 2.5, 1.5, 2.5, 
+
+  // Chorus: "I love you baby..."
+  2, 2, 2, 2, 2, 
+  // "And if it's quite alright "
+  2, 2, 2, 2, 2, 2, 
+  // "I need you, Baby"
+  2, 2, 2, 2,
+  // "To warm the lonely nights"
+  2, 2, 2, 2, 2, 2, 2, 2,
+
+  // "I love you baby..."
+  2, 2, 2, 2, 2,
+  // "Trust in me why I say"
+  2, 2, 2, 2, 2, 2,
+
+  // "Oh pretty baby" 
+  2, 2, 2, 2,
+  // "Dont bring me down I pray"
+  2, 2, 2, 2, 2, 2, 2, 2,
+
+  // "Oh pretty baby, now that I found you, stay" 
+  2, 2, 2, 2, 2,
+  2, 2, 2, 2, 2, 2,
+
+  // "And let me love you, baby"
+  2, 2, 2, 2,
+  // "Let me love you"
+  2, 2, 2, 2, 2, 4
 };
+
 
 void PlayThis() {
   int length = sizeof(melody) / sizeof(melody[0]);
   for (int i = 0; i < length; i++) {
-    int duration = 1000 / noteDurations[i];
+    float duration = 1000.0 / noteDurations[i];
     if (melody[i] == REST) {
       delay(duration);  // Rest: just wait
     } else {
@@ -224,16 +269,7 @@ void PlayThis() {
   }
 }
 
-//
-
-void setup() {
-  pinMode(speakerPin, OUTPUT);
-  Serial.begin(115200);
-  Serial.println("Type notes (A-G or A#–G#) to play. Press ENTER after each.");
-}
-
-void loop() {
-  PlayThis();
+void PlayTest(void){
   static String inputBuffer = "";
   while (Serial.available()) {
     char c = Serial.read();
@@ -253,6 +289,19 @@ void loop() {
     } else {
       inputBuffer += c;
     }
+  }
+}
+
+void setup() {
+  pinMode(speakerPin, OUTPUT);
+  Serial.begin(115200);
+  Serial.println("Type notes (A-G or A#–G#) to play. Press ENTER after each.");
+}
+
+void loop() {
+  PlayThis();
+  while(1) {
+    // Does Nothing
   }
 }
 
