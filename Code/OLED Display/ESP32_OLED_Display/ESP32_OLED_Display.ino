@@ -14,7 +14,7 @@
   - Download this library as a zip from the repo and add it using Sketch -> Include Library -> Add .ZIP Library
   
   Hardware Requirements:
-  1. ESP32 Wroom/Feather Dev Module
+  1. ESP32 W
   2. TFT ILI9163C Display
 */
 
@@ -22,11 +22,14 @@
 #include <Adafruit_GFX.h>        // Adafruit GFX library for graphics functions
 #include <TFT_ILI9163C.h>        // TFT ILI9163C library for the specific display
 
-// Pin Definitions for TFT Display
-#define __CS  15  // Chip Select pin
-#define __DC  2   // Data/Command pin
-#define A0    4   //  Reset pin
-#define SCK   18  // Clock pin
+// Pin definitions for ESP32
+#define __CS    17   // Chip select (just choose whatever free pin)
+#define __DC    4  // Data/command (just choose whatever free pin)
+#define __RST   16  // Reset (just chose whatever free pin)
+#define __SCK   5   // Clock (picked the one on the datasheet)
+#define __SDA   18  // MOSI (picked the one on the datasheet)
+// LED and VCC connected to 3.3 V
+// GND Connected to GND
 
 // Color Definitions (16-bit RGB format)
 #define BLACK   0x0000
@@ -41,7 +44,7 @@
 #define TIME 2  // Delay time in seconds
 
 // Create a TFT display object using the defined pin connections
-TFT_ILI9163C tft(__CS, __DC, A0);
+TFT_ILI9163C tft(__CS, __DC, __RST);
 
 void setup() {
   // Initialize Serial communication for debugging (115200 baud rate)
