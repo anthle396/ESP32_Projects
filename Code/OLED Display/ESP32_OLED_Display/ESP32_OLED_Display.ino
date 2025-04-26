@@ -26,8 +26,8 @@
 #define __CS    17   // Chip select (just choose whatever free pin)
 #define __DC    4  // Data/command (just choose whatever free pin)
 #define __RST   16  // Reset (just chose whatever free pin)
-#define __SCK   5   // Clock (picked the one on the datasheet)
-#define __SDA   18  // MOSI (picked the one on the datasheet)
+// __SCK   5   // Clock (picked the one on the datasheet)
+// __SDA   18  // MOSI (picked the one on the datasheet)
 // LED and VCC connected to 3.3 V
 // GND Connected to GND
 
