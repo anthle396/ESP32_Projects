@@ -23,3 +23,4 @@ This project demonstrates basic GPIO control using an ESP32 microcontroller. It 
 - Toggle or cycle through LED colors with a push button.
 - Play tones or sound effects through the speaker.
 - Basic debounce or edge detection for the push button (if implemented).
+- Display colors and text on OLED display
