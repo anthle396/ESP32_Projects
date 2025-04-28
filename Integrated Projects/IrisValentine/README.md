@@ -27,3 +27,5 @@ This project demonstrates basic GPIO control using an ESP32 microcontroller. It 
 
 Note*
 While putting in the case I realized the green cable was too short so I tried to force it in and accidently unplugged that port. Therefore the green color will no longer work so only red and blue.
+
+Code should still work fine.
