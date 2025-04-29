@@ -50,6 +50,17 @@ void setup() {
   // Initialize Serial communication for debugging (115200 baud rate)
   Serial.begin(115200);
   Serial.println("Booting up Display Program...\n");
+  Serial.print("CS = ");
+  Serial.print(__CS);
+  Serial.println(" Pin\n");
+
+  Serial.print("A0 = ");
+  Serial.print(__DC);
+  Serial.println(" Pin\n");
+
+  Serial.print("RST = ");
+  Serial.print(__RST);
+  Serial.println(" Pin\n");
 
   // Initialize the TFT display
   tft.begin();
