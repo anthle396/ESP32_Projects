@@ -182,22 +182,22 @@ Note parseNote(String input) {
 Note melody[] = {
   // Intro: 
   C4_, C4S_, C4_, C4S_, C4_, C4S_, 
-  E4_, D4S_, C4S_, REST,
+  E4_, D4S_, C4S_,
   C4_, C4S_, C4_, C4S_, C4_, C4S_, 
-  E4_, D4S_, C4S_, REST,
-  C4_, C4S_, C4_, C4S_, E4_, REST,
+  E4_, D4S_, C4S_, 
+  C4_, C4S_, C4_, C4S_, E4_, 
 
   // Chorus: "I love you baby"
   G5S_, G5S_, G5S_, G5S_, C5S_, 
   // "And if it's quite alright "
-  C5S_, D5S_, E5_, F5S_, G5S_, G5S_,
+  D5S_, E5_, F5S_, G5S_, G5S_,
   // "I need you, Baby"
   F5S_, E5_, D5S_, E5_,
   // "To warm the lonely nights"
   F5S_, F5S_, E5_, D5S_, E5_, F5S_, F5S_, E5_,
 
   // "I love you baby..."
-  E5_, E5_, G5S_, G5S_, C5S_,
+  E5_, // WORK HERE -> G5S_, F5S_, G5S_, E5_,
   // "Trust in me why I say"
   C5S_, D5S_, E5_, F5S_, G5S_, G5S_,
 
@@ -220,13 +220,13 @@ Note melody[] = {
 float noteDurations[] = {
   // Intro durations
   2.5, 3, 2.5, 3, 3, 2.5, 
-  3, 2.5, 2.5, 2.5, 
+  3, 2.5, 2.5, 
   3, 2.5, 3, 2.5, 3, 3, 2.5, 
-  3, 2.5, 2.5, 2.5, 
-  2.5, 2.5, 2.5, 2.5, 1.5, 2.5, 
+  3, 2.5, 2.5, 
+  2.5, 2.5, 2.5, 2.5, 1.5,  
 
   // Chorus: "I love you baby..."
-  2, 2, 2, 2, 2, 
+  2, 2, 2, 2, 
   // "And if it's quite alright "
   2, 2, 2, 2, 2, 2, 
   // "I need you, Baby"
