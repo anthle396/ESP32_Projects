@@ -161,7 +161,7 @@ void displayColor(String color) {
     analogWrite(RED_GPIO_PORT, LED_OFF);
     analogWrite(GREEN_GPIO_PORT, LED_OFF);
     analogWrite(BLUE_GPIO_PORT, MAX_RGB_VALUE);  // Full intensity
-  } else if (color == "PURPLE") {
+  } else if (color == "MAGENTA") {
     analogWrite(RED_GPIO_PORT, MAX_RGB_VALUE);  // Full intensity
     analogWrite(GREEN_GPIO_PORT, LED_OFF);
     analogWrite(BLUE_GPIO_PORT, MAX_RGB_VALUE);  // Full intensity
@@ -529,7 +529,8 @@ void setup() {
   // Display "Hello World" message
   tft.setCursor(10, 30);       // Set cursor position (x=10, y=30)
   tft.println("Booting \n Up...\n"); // Print "Hello World" on the TFT screen
-  delay(TIME * 1000);
+  delay(5000);
+  
   // Attach an interrupt to the button pin
   // The interrupt will trigger on a FALLING edge (button press)
   attachInterrupt(digitalPinToInterrupt(BUTTON_PIN), buttonISR, FALLING);
@@ -538,17 +539,98 @@ void setup() {
 void loop() {
   // Check if the button was pressed 
   // Serial.println("Awaiting Button Input");
+  
+  tft.setRotation(2);          // Adjust the screen orientation
+  tft.setTextSize(2);          // Set the text size to medium
+  tft.setCursor(10, 30);       // Set cursor position (x=10, y=30)
+  tft.fillScreen(BLACK);       // Set the initial background color to black
+  tft.setTextColor(YELLOW);     // Set the text color to white
+  tft.println("Fading \n Through \n Colors...\n");
+  delay(2000);
+  fadeThroughColors();
+  
+  tft.fillScreen(BLACK);       // Set the initial background color to black
+  tft.setTextColor(GREEN);     // Set the text color to white
+  tft.setRotation(2);          // Adjust the screen orientation
+  tft.setTextSize(2);          // Set the text size to medium
+  tft.setCursor(10, 30);       // Set cursor position (x=10, y=30)
+  tft.println("Press the \n Button...\n");
+  while(!buttonPressed){
+    // do nothing until button pressed
+    if (buttonPressed){
+      break;
+    }
+  }
+
   if (buttonPressed) {
+    displayColor("PURPLE");
     // Print message when button is pressed
-    Serial.println("Message received");
+    Serial.println("Button Pressed");
+    tft.fillScreen(BLACK);       // Set the initial background color to black
+    tft.setTextColor(RED);     // Set the text color to white
+    tft.setRotation(2);          // Adjust the screen orientation
+    tft.setTextSize(2);          // Set the text size to medium
+    tft.setCursor(10, 30);       // Set cursor position (x=10, y=30)
+    tft.println(" \n Loving \n Iris \n Please \n Hold...\n");
+    
+    delay(500);
+    
+    tft.fillScreen(BLACK);       // Set the initial background color to black
+    tft.setTextColor(MAGENTA);     // Set the text color to white
+    tft.setRotation(2);          // Adjust the screen orientation
+    tft.setTextSize(2);          // Set the text size to medium
+    tft.setCursor(10, 30);       // Set cursor position (x=10, y=30)
+    tft.println(" Loving \n Iris \n Please \n Hold...\n");
+    delay(500);
+
+    tft.fillScreen(BLACK);       // Set the initial background color to black
+    tft.setTextColor(BLUE);     // Set the text color to white
+    tft.setRotation(2);          // Adjust the screen orientation
+    tft.setTextSize(2);          // Set the text size to medium
+    tft.setCursor(10, 30);       // Set cursor position (x=10, y=30)
+    tft.println("Loving \n Iris \n Please \n Hold...\n");
+    delay(500);
+
+    tft.fillScreen(BLACK);       // Set the initial background color to black
+    tft.setTextColor(CYAN);     // Set the text color to white
+    tft.setRotation(2);          // Adjust the screen orientation
+    tft.setTextSize(2);          // Set the text size to medium
+    tft.setCursor(10, 30);       // Set cursor position (x=10, y=30)
+    tft.println("Loving \n Iris \n Please \n Hold...\n");
+    delay(500);
+
+    tft.fillScreen(BLACK);       // Set the initial background color to black
+    tft.setTextColor(GREEN);     // Set the text color to white
+    tft.setRotation(2);          // Adjust the screen orientation
+    tft.setTextSize(2);          // Set the text size to medium
+    tft.setCursor(10, 30);       // Set cursor position (x=10, y=30)
+    tft.println("Loving \n Iris \n Please \n Hold...\n");
+    delay(500);
     // Debounce the button: wait for the specified debounce time
     delay(DEBOUNCE_TIME);
-    
     PlayThis();
-    fadeThroughColors();
+
+    
 
     // Reset the flag
     buttonPressed = false;
+
+    tft.fillScreen(BLACK);       // Set the initial background color to black
+    tft.setTextColor(GREEN);     // Set the text color to white
+    tft.setRotation(2);          // Adjust the screen orientation
+    tft.setTextSize(2);          // Set the text size to medium
+    tft.setCursor(10, 30);       // Set cursor position (x=10, y=30)
+    tft.println("Happy 2 \n Year Anniversary \n Iris! \n");
+    delay(10000);
+
+    tft.fillScreen(BLACK);       // Set the initial background color to black
+    tft.setTextColor(GREEN);     // Set the text color to white
+    tft.setRotation(2);          // Adjust the screen orientation
+    tft.setTextSize(2);          // Set the text size to medium
+    tft.setCursor(10, 30);       // Set cursor position (x=10, y=30)
+    tft.println("Here's to many \n more years of \n loving you endlessly! \n");
+    delay(5000);
+    clearColor();
   }
 
   // Other program logic can go here
