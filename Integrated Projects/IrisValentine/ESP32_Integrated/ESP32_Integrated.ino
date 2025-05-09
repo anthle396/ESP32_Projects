@@ -611,7 +611,7 @@ void loop() {
     tft.setCursor(10, 30);       // Set cursor position (x=10, y=30)
     tft.println("If You Love\n Me Press \n The Button...\n If Not Hold \n Button For \n 2 Seconds");
     delay(500);
-
+    
     if (buttonPressed){
       buttonPressed = false;
     }
