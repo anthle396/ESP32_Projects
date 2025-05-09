@@ -630,5 +630,23 @@ void loop() {
     clearColor();
   }
 
+  tft.fillScreen(BLACK);       // Set the initial background color to black
+  tft.setTextColor(WHITE);     // Set the text color to white
+  tft.setRotation(2);          // Adjust the screen orientation
+  tft.setTextSize(2);          // Set the text size to medium
+  tft.setCursor(10, 30);       // Set cursor position (x=10, y=30)
+  tft.println("Press \n to Reset. \n");
+  delay(10000);
+  if (buttonPressed){
+      buttonPressed = false;
+  }
+
+  while(!buttonPressed)
+  {
+    if (buttonPressed){
+      buttonPressed = false;
+    }
+  }
+  buttonPressed = false;
   // Other program logic can go here
 }
