@@ -190,70 +190,72 @@ Note melody[] = {
   // Chorus: "I love you baby"
   G5S_, G5S_, G5S_, G5S_, C5S_, 
   // "And if it's quite alright "
-  D5S_, E5_, F5S_, G5S_, G5S_,
+  D5S_, E5_, F5S_, G5S_, G5S_,  F5S_,
   // "I need you, Baby"
-  F5S_, E5_, D5S_, E5_,
+  E5_, D5S_, E5_, F5S_, F5S_,
   // "To warm the lonely nights"
-  F5S_, F5S_, E5_, D5S_, E5_, F5S_, F5S_, E5_,
+  E5_, D5S_, E5_, F5S_, F5S_, E5_,
 
   // "I love you baby..."
-  E5_, // WORK HERE -> G5S_, F5S_, G5S_, E5_,
+  E5_, D5S_, C5S_, E5_, A4_,
   // "Trust in me why I say"
-  C5S_, D5S_, E5_, F5S_, G5S_, G5S_,
-
-  // --- Work In Progress down here ---
+  E5_, E5_, D5S_, C5S_, D5S_, D5S_,
+  
   // "Oh pretty baby" 
-  F5S_, E5_, D5S_, E5_,
+  G5S_, G5S_, G5S_, G5S_, C5S_, 
   // "Dont bring me down I pray"
-  F5S_, F5S_, E5_, D5S_, E5_, F5S_, F5S_, E5_,
+  D5S_, E5_, F5S_, G5S_, G5S_, B5_,
+  
+  // "Oh pretty baby,"
+  G5S_, F5S_, E5_, F5S_, B4_, 
 
-  // "Oh pretty baby, now that I found you, stay" 
-  E5_, E5_, G5S_, G5S_, C5S_,
-  C5S_, D5S_, E5_, F5S_, G5S_, G5S_,
-
+  // "now that I found you, stay" 
+  C5S_, D5S_, E5_, F5S_, F5S_, E5_,
+  
   // "And let me love you, baby"
-  F5S_, E5_, D5S_, E5_,
+  E5_, D5S_, C5S_, E5_, F5S_, C5S_, D5S_,
   // "Let me love you"
-  F5S_, F5S_, E5_, D5S_, E5_, REST
+  E5_, C5S_, E5_, F5S_, F5_
 };
 
 float noteDurations[] = {
-  // Intro durations
-  2.5, 3, 2.5, 3, 3, 2.5, 
-  3, 2.5, 2.5, 
-  3, 2.5, 3, 2.5, 3, 3, 2.5, 
-  3, 2.5, 2.5, 
-  2.5, 2.5, 2.5, 2.5, 1.5,  
+  // Intro: 
+  2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 
+  2.5, 2.5, 2.5,
+  2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 
+  2.5, 2.5, 2.5, 
+  2.5, 2.5, 2.5, 2.5, 2.5,  
 
-  // Chorus: "I love you baby..."
-  2, 2, 2, 2, 
+  // Chorus: "I love you baby"
+  2.5, 2.5, 2.5, 2.5, 2.5, 
   // "And if it's quite alright "
-  2, 2, 2, 2, 2, 2, 
+  2.5, 2.5, 2.5, 2.5, 2.5, 2.5,
   // "I need you, Baby"
-  2, 2, 2, 2,
+  2.5, 2.5, 2.5, 2.5, 2.5,
   // "To warm the lonely nights"
-  2, 2, 2, 2, 2, 2, 2, 2,
+  2.5, 2.5, 2.5, 2.5, 2.5, 2.5,
 
   // "I love you baby..."
-  2, 2, 2, 2, 2,
+  2.5, 2.5, 2.5, 2.5, 2.5,
   // "Trust in me why I say"
-  2, 2, 2, 2, 2, 2,
+  2.5, 2.5, 2.5, 2.5, 2.5, 2.5,
 
   // "Oh pretty baby" 
-  2, 2, 2, 2,
+  2.5, 2.5, 2.5, 2.5, 2.5,
   // "Dont bring me down I pray"
-  2, 2, 2, 2, 2, 2, 2, 2,
+  2.5, 2.5, 2.5, 2.5, 2.5, 2.5,
 
-  // "Oh pretty baby, now that I found you, stay" 
-  2, 2, 2, 2, 2,
-  2, 2, 2, 2, 2, 2,
+  // "Oh pretty baby,"
+  2.5, 2.5, 2.5, 2.5, 2.5,
+
+  // "now that I found you, stay" 
+  2.5, 2.5, 2.5, 2.5, 2.5, 2.5,
 
   // "And let me love you, baby"
-  2, 2, 2, 2,
+  2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5,
   // "Let me love you"
-  2, 2, 2, 2, 2, 4
+  2.5, 2.5, 2.5, 2.5, 2.5
 };
-
 
 void PlayThis() {
   int length = sizeof(melody) / sizeof(melody[0]);
