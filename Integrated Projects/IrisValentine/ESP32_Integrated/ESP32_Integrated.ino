@@ -220,16 +220,6 @@ void fadeThroughColors() {
   }
 }
 
-// void colorFlash(int RGB_Value) {
-//      // Fade from White to Red, Green, Blue smoothly
-//      if(RGB_Value >)
-//     analogWrite(RED_GPIO_PORT, i);        // Decrease Red
-//     analogWrite(GREEN_GPIO_PORT, i);      // Decrease Green
-//     analogWrite(BLUE_GPIO_PORT, i);       // Decrease Blue
-//     delay(LED_DELAY);  // Adjust the fade speed
-//   }
-// }
-
 void RGB_LED_SELECT(int RED_VALUE, int GREEN_VALUE, int BLUE_VALUE) {
   analogWrite(RED_GPIO_PORT, RED_VALUE);        // Decrease Red
   analogWrite(GREEN_GPIO_PORT, GREEN_VALUE);      // Decrease Green
@@ -372,76 +362,79 @@ Note parseNote(String input) {
 Note melody[] = {
   // Intro: 
   C4_, C4S_, C4_, C4S_, C4_, C4S_, 
-  E4_, D4S_, C4S_, REST,
+  E4_, D4S_, C4S_,
   C4_, C4S_, C4_, C4S_, C4_, C4S_, 
-  E4_, D4S_, C4S_, REST,
-  C4_, C4S_, C4_, C4S_, E4_, REST,
+  E4_, D4S_, C4S_, 
+  C4_, C4S_, C4_, C4S_, E4_, 
 
   // Chorus: "I love you baby"
   G5S_, G5S_, G5S_, G5S_, C5S_, 
   // "And if it's quite alright "
-  C5S_, D5S_, E5_, F5S_, G5S_, G5S_,
+  D5S_, E5_, F5S_, G5S_, G5S_,  F5S_,
   // "I need you, Baby"
-  F5S_, E5_, D5S_, E5_,
+  E5_, D5S_, E5_, F5S_, F5S_,
   // "To warm the lonely nights"
-  F5S_, F5S_, E5_, D5S_, E5_, F5S_, F5S_, E5_,
+  E5_, D5S_, E5_, F5S_, F5S_, E5_,
 
   // "I love you baby..."
-  E5_, E5_, G5S_, G5S_, C5S_,
+  E5_, D5S_, C5S_, E5_, A4_,
   // "Trust in me why I say"
-  C5S_, D5S_, E5_, F5S_, G5S_, G5S_,
-
-  // --- Work In Progress down here ---
+  E5_, E5_, D5S_, C5S_, D5S_, D5S_,
+  
   // "Oh pretty baby" 
-  F5S_, E5_, D5S_, E5_,
+  G5S_, G5S_, G5S_, G5S_, C5S_, 
   // "Dont bring me down I pray"
-  F5S_, F5S_, E5_, D5S_, E5_, F5S_, F5S_, E5_,
+  D5S_, E5_, F5S_, G5S_, G5S_, B5_,
+  
+  // "Oh pretty baby,"
+  G5S_, F5S_, E5_, F5S_, B4_, 
 
-  // "Oh pretty baby, now that I found you, stay" 
-  E5_, E5_, G5S_, G5S_, C5S_,
-  C5S_, D5S_, E5_, F5S_, G5S_, G5S_,
-
+  // "now that I found you, stay" 
+  C5S_, D5S_, E5_, F5S_, F5S_, E5_,
+  
   // "And let me love you, baby"
-  F5S_, E5_, D5S_, E5_,
+  E5_, D5S_, C5S_, E5_, F5S_, C5S_, D5S_,
   // "Let me love you"
-  F5S_, F5S_, E5_, D5S_, E5_, REST
+  E5_, C5S_, E5_, F5S_, F5_
 };
 
 float noteDurations[] = {
-  // Intro durations
-  2.5, 3, 2.5, 3, 3, 2.5, 
-  3, 2.5, 2.5, 2.5, 
-  3, 2.5, 3, 2.5, 3, 3, 2.5, 
-  3, 2.5, 2.5, 2.5, 
-  2.5, 2.5, 2.5, 2.5, 1.5, 2.5, 
+  // Intro: 
+  2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 
+  2.5, 2.5, 2.5,
+  2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 
+  2.5, 2.5, 2.5, 
+  2.5, 2.5, 2.5, 2.5, 2.5,  
 
-  // Chorus: "I love you baby..."
-  2, 2, 2, 2, 2, 
+  // Chorus: "I love you baby"
+  2.5, 2.5, 2.5, 2.5, 2.5, 
   // "And if it's quite alright "
-  2, 2, 2, 2, 2, 2, 
+  2.5, 2.5, 2.5, 2.5, 2.5, 2.5,
   // "I need you, Baby"
-  2, 2, 2, 2,
+  2.5, 2.5, 2.5, 2.5, 2.5,
   // "To warm the lonely nights"
-  2, 2, 2, 2, 2, 2, 2, 2,
+  2.5, 2.5, 2.5, 2.5, 2.5, 2.5,
 
   // "I love you baby..."
-  2, 2, 2, 2, 2,
+  2.5, 2.5, 2.5, 2.5, 2.5,
   // "Trust in me why I say"
-  2, 2, 2, 2, 2, 2,
+  2.5, 2.5, 2.5, 2.5, 2.5, 2.5,
 
   // "Oh pretty baby" 
-  2, 2, 2, 2,
+  2.5, 2.5, 2.5, 2.5, 2.5,
   // "Dont bring me down I pray"
-  2, 2, 2, 2, 2, 2, 2, 2,
+  2.5, 2.5, 2.5, 2.5, 2.5, 2.5,
 
-  // "Oh pretty baby, now that I found you, stay" 
-  2, 2, 2, 2, 2,
-  2, 2, 2, 2, 2, 2,
+  // "Oh pretty baby,"
+  2.5, 2.5, 2.5, 2.5, 2.5,
+
+  // "now that I found you, stay" 
+  2.5, 2.5, 2.5, 2.5, 2.5, 2.5,
 
   // "And let me love you, baby"
-  2, 2, 2, 2,
+  2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5,
   // "Let me love you"
-  2, 2, 2, 2, 2, 4
+  2.5, 2.5, 2.5, 2.5, 2.5
 };
 
 
@@ -507,28 +500,29 @@ void setup() {
   pinMode(speakerPin, OUTPUT);
 
   Serial.println("Booting up Display Program...\n");
-  Serial.print("CS = ");
-  Serial.print(__CS);
-  Serial.println(" Pin\n");
+  // Serial.print("CS = ");
+  // Serial.print(__CS);
+  // Serial.println(" Pin\n");
 
-  Serial.print("A0 = ");
-  Serial.print(__DC);
-  Serial.println(" Pin\n");
+  // Serial.print("A0 = ");
+  // Serial.print(__DC);
+  // Serial.println(" Pin\n");
 
-  Serial.print("RST = ");
-  Serial.print(__RST);
-  Serial.println(" Pin\n");
+  // Serial.print("RST = ");
+  // Serial.print(__RST);
+  // Serial.println(" Pin\n");
 
   // Initialize the TFT display
   tft.begin();
   tft.setRotation(2);          // Adjust the screen orientation
+  tft.setTextSize(2);          // Set the text size to medium
+  tft.setCursor(10, 30);       // Set cursor position (x=10, y=30)
   tft.fillScreen(BLACK);       // Set the initial background color to black
   tft.setTextColor(WHITE);     // Set the text color to white
-  tft.setTextSize(2);          // Set the text size to medium
-
-  // Display "Hello World" message
-  tft.setCursor(10, 30);       // Set cursor position (x=10, y=30)
   tft.println("Booting \n Up...\n"); // Print "Hello World" on the TFT screen
+  
+  // Display "Hello World" message
+  
   delay(5000);
   
   // Attach an interrupt to the button pin
@@ -545,7 +539,7 @@ void loop() {
   tft.setCursor(10, 30);       // Set cursor position (x=10, y=30)
   tft.fillScreen(BLACK);       // Set the initial background color to black
   tft.setTextColor(YELLOW);     // Set the text color to white
-  tft.println("Fading \n Through \n Colors...\n");
+  tft.println("WAIT! \n Look at the \n Cool Heart \n <-----\n");
   delay(2000);
   fadeThroughColors();
   
@@ -554,7 +548,8 @@ void loop() {
   tft.setRotation(2);          // Adjust the screen orientation
   tft.setTextSize(2);          // Set the text size to medium
   tft.setCursor(10, 30);       // Set cursor position (x=10, y=30)
-  tft.println("Press the \n Button...\n");
+  tft.println("Press The \n Button \n To Continue...\n");
+
   while(!buttonPressed){
     // do nothing until button pressed
     if (buttonPressed){
@@ -616,7 +611,7 @@ void loop() {
     buttonPressed = false;
 
     tft.fillScreen(BLACK);       // Set the initial background color to black
-    tft.setTextColor(GREEN);     // Set the text color to white
+    tft.setTextColor(WHITE);     // Set the text color to white
     tft.setRotation(2);          // Adjust the screen orientation
     tft.setTextSize(2);          // Set the text size to medium
     tft.setCursor(10, 30);       // Set cursor position (x=10, y=30)
@@ -624,7 +619,7 @@ void loop() {
     delay(10000);
 
     tft.fillScreen(BLACK);       // Set the initial background color to black
-    tft.setTextColor(GREEN);     // Set the text color to white
+    tft.setTextColor(WHITE);     // Set the text color to white
     tft.setRotation(2);          // Adjust the screen orientation
     tft.setTextSize(2);          // Set the text size to medium
     tft.setCursor(10, 30);       // Set cursor position (x=10, y=30)
