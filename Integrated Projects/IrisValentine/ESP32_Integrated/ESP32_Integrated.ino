@@ -536,19 +536,21 @@ void loop() {
   
   tft.setRotation(2);          // Adjust the screen orientation
   tft.setTextSize(2);          // Set the text size to medium
-  tft.setCursor(10, 30);       // Set cursor position (x=10, y=30)
+  tft.setCursor(10, 10);       // Set cursor position (x=10, y=30)
   tft.fillScreen(BLACK);       // Set the initial background color to black
   tft.setTextColor(YELLOW);     // Set the text color to white
-  tft.println("WAIT! \n Look at the \n Cool Heart \n <-----\n");
+  tft.println("WAIT! \n Look At \n The \n Cool \n Heart \n <-----\n");
   delay(2000);
   fadeThroughColors();
-  
+  if(buttonPressed) {
+    buttonPressed = false;
+  }
   tft.fillScreen(BLACK);       // Set the initial background color to black
   tft.setTextColor(GREEN);     // Set the text color to white
   tft.setRotation(2);          // Adjust the screen orientation
   tft.setTextSize(2);          // Set the text size to medium
-  tft.setCursor(10, 30);       // Set cursor position (x=10, y=30)
-  tft.println("Press The \n Button \n To Continue...\n");
+  tft.setCursor(10, 20);       // Set cursor position (x=10, y=30)
+  tft.println("Press The \n Button \n To \n Continue\n ...\n");
 
   while(!buttonPressed){
     // do nothing until button pressed
@@ -613,18 +615,18 @@ void loop() {
     tft.fillScreen(BLACK);       // Set the initial background color to black
     tft.setTextColor(WHITE);     // Set the text color to white
     tft.setRotation(2);          // Adjust the screen orientation
-    tft.setTextSize(2);          // Set the text size to medium
+    tft.setTextSize(1);          // Set the text size to medium
     tft.setCursor(10, 30);       // Set cursor position (x=10, y=30)
-    tft.println("Happy 2 \n Year Anniversary \n Iris! \n");
+    tft.println("Happy 2 \n Year \n Anniversary \n Iris! \n");
     delay(10000);
 
     tft.fillScreen(BLACK);       // Set the initial background color to black
     tft.setTextColor(WHITE);     // Set the text color to white
     tft.setRotation(2);          // Adjust the screen orientation
-    tft.setTextSize(2);          // Set the text size to medium
+    tft.setTextSize(1);          // Set the text size to medium
     tft.setCursor(10, 30);       // Set cursor position (x=10, y=30)
-    tft.println("Here's to many \n more years of \n loving you endlessly! \n");
-    delay(5000);
+    tft.println("Here's to many \n more years of \n loving you \n endlessly! \n");
+    delay(10000);
     clearColor();
   }
 
