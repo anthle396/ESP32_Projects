@@ -603,8 +603,43 @@ void loop() {
     tft.setCursor(10, 30);       // Set cursor position (x=10, y=30)
     tft.println("Loving \n Iris \n Please \n Hold...\n");
     delay(500);
+
+    tft.fillScreen(BLACK);       // Set the initial background color to black
+    tft.setTextColor(GREEN);     // Set the text color to white
+    tft.setRotation(2);          // Adjust the screen orientation
+    tft.setTextSize(1);          // Set the text size to medium
+    tft.setCursor(10, 30);       // Set cursor position (x=10, y=30)
+    tft.println("If You Love\n Me Press \n The Button...\n If Not Hold \n Button For \n 2 Seconds");
+    delay(500);
+
+    if (buttonPressed){
+      buttonPressed = false;
+    }
+    while(!buttonPressed){
+      // do nothing until button pressed
+      if (buttonPressed){
+        break;
+      }
+    }
+
+    tft.fillScreen(BLACK);       // Set the initial background color to black
+    tft.setTextColor(GREEN);     // Set the text color to white
+    tft.setRotation(2);          // Adjust the screen orientation
+    tft.setTextSize(2);          // Set the text size to medium
+    tft.setCursor(10, 30);       // Set cursor position (x=10, y=30)
+    tft.println("Too Bad \n You fell \n for my \n trap!");
+    delay(2000);
+
+    tft.fillScreen(BLACK);       // Set the initial background color to black
+    tft.setTextColor(GREEN);     // Set the text color to white
+    tft.setRotation(2);          // Adjust the screen orientation
+    tft.setTextSize(2);          // Set the text size to medium
+    tft.setCursor(10, 30);       // Set cursor position (x=10, y=30)
+    tft.println("Now Enjoy \n Some \n Music!");
+    delay(2000);
     // Debounce the button: wait for the specified debounce time
     delay(DEBOUNCE_TIME);
+    
     PlayThis();
 
     
@@ -617,16 +652,35 @@ void loop() {
     tft.setRotation(2);          // Adjust the screen orientation
     tft.setTextSize(1);          // Set the text size to medium
     tft.setCursor(10, 30);       // Set cursor position (x=10, y=30)
-    tft.println("Happy 2 \n Year \n Anniversary \n Iris! \n");
-    delay(10000);
+    tft.println("Happy 2 Year \n Anniversary \n Iris! \n Press Button \n To Continue... \n");
+    
+    if (buttonPressed){
+      buttonPressed = false;
+    }
+    while(!buttonPressed){
+      // do nothing until button pressed
+      if (buttonPressed){
+        break;
+      }
+    }
 
     tft.fillScreen(BLACK);       // Set the initial background color to black
     tft.setTextColor(WHITE);     // Set the text color to white
     tft.setRotation(2);          // Adjust the screen orientation
     tft.setTextSize(1);          // Set the text size to medium
     tft.setCursor(10, 30);       // Set cursor position (x=10, y=30)
-    tft.println("Here's to many \n more years of \n loving you \n endlessly! \n");
-    delay(10000);
+    tft.println(" Here's To Many \n More Years Of \n Loving You \n Endlessly! \n Press Button \n To Continue... \n");
+    
+
+    if (buttonPressed){
+      buttonPressed = false;
+    }
+    while(!buttonPressed){
+      // do nothing until button pressed
+      if (buttonPressed){
+        break;
+      }
+    }
     clearColor();
   }
 
@@ -636,18 +690,15 @@ void loop() {
   tft.setTextSize(2);          // Set the text size to medium
   tft.setCursor(10, 30);       // Set cursor position (x=10, y=30)
   tft.println("Press \n to Reset. \n");
-  delay(10000);
+  
   if (buttonPressed){
       buttonPressed = false;
   }
-
-  while(!buttonPressed)
-  {
+  while(!buttonPressed){
+    // do nothing until button pressed
     if (buttonPressed){
-      buttonPressed = false;
       break;
     }
   }
-  buttonPressed = false;
   // Other program logic can go here
 }
