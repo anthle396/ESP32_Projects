@@ -645,6 +645,7 @@ void loop() {
   {
     if (buttonPressed){
       buttonPressed = false;
+      break;
     }
   }
   buttonPressed = false;
